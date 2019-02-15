@@ -5,6 +5,7 @@ const Item = require("../../models/Item");
 
 //cors middleware
 const cors = require("cors");
+router.options("/*", cors());
 
 // @route   GET api/GET/test
 // @desc    Test route
@@ -16,13 +17,12 @@ router.get("/test", (req, res) => {
 // @route   GET api/GET/
 // @desc    get all items
 // @access  Public
-router.get("/", (req, res) => {
+router.get("/", cors(), (req, res) => {
   const errors = {};
-  Item
-    .find()
+  Item.find()
     .populate("itm")
     .then(itms => {
-      if(!itms) {
+      if (!itms) {
         errors.noitems = "There are no items";
         return res.status(404).json(errors);
       }
@@ -34,12 +34,11 @@ router.get("/", (req, res) => {
 // @route   GET api/GET/:id
 // @desc    get all items
 // @access  Public
-router.get("/:id", (req, res) => {
+router.get("/:id", cors(), (req, res) => {
   const errors = {};
-  Item
-    .findById(req.params.id)
+  Item.findById(req.params.id)
     .then(itm => {
-      if(!itm){
+      if (!itm) {
         errors.noitem = "This item doesn't exist";
         return res.status(404).json(errors);
       }
