@@ -1,0 +1,33 @@
+{
+  "name": "mongocrud",
+  "version": "1.0.0",
+  "description": "Simple MERN stack crud",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanprem/MONGOcrud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanprem/MONGOcrud/issues"
+  },
+  "homepage": "https://github.com/dylanprem/MONGOcrud#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.12",
+    "validator": "^10.11.0"
+  }
+}
