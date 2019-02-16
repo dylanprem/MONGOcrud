@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import mongoPhoto from "../img/mongo.jpg";
 import ListItems from "../components/child-components/ListItems";
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container mt-5 mb-5">
+        <div className="row mt-3">
+          <div className="col-md-12">
+            <h3>
+              <Link className="text-success" to="/about">
+                About
+              </Link>
+            </h3>
+          </div>
+        </div>
         <div className="row mt-3">
           <img
             src={mongoPhoto}

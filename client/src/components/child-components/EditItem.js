@@ -86,7 +86,7 @@ class EditItem extends Component {
       </form>
     );
     return (
-      <div className="container">
+      <div className="container mt-5 mb-5">
         <div className="row mt-3">
           <img
             src={mongoPhoto}

@@ -88,7 +88,13 @@ class ListItems extends Component {
           <td className={deleting === true ? "text-danger" : "text-muted"}>
             {i.item}
           </td>
-          <td>
+
+          <td className="text-center">
+            <Link to={`edit/${i._id}`} className="btn btn-success">
+              <i className="far fa-edit" /> edit
+            </Link>
+          </td>
+          <td className="text-right">
             <button
               className={
                 deleting === true ? "btn btn-danger" : "btn btn-secondary"
@@ -98,18 +104,13 @@ class ListItems extends Component {
               <i className="fas fa-trash-alt" /> delete
             </button>
           </td>
-          <td>
-            <Link to={`edit/${i._id}`} className="btn btn-success">
-              <i className="far fa-edit" /> edit
-            </Link>
-          </td>
         </tr>
       ));
     } else {
       listItems = (
         <tr>
           <td>
-            <small className="text-danger">{errors && errors.noitems}</small>
+            <small className="text-danger">NO ITEMS</small>
           </td>
         </tr>
       );
@@ -128,6 +129,7 @@ class ListItems extends Component {
                 ? "form-control form-control-lg is-invalid"
                 : "form-control form-control-lg"
             }
+            placeholder="Enter an item here"
           />
           <div className="invalid-feedback">{errors.item}</div>
           <input
@@ -150,9 +152,9 @@ class ListItems extends Component {
         <table className="table table-hover">
           <thead>
             <tr>
-              <th>Item</th>
-              <th />
-              <th />
+              <th className="equal-width">Item</th>
+              <th className="equal-width" />
+              <th className="equal-width" />
             </tr>
           </thead>
           <tbody>{listItems}</tbody>

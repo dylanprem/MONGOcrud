@@ -1,5 +1,9 @@
-.mongo-icon{
+.mongo-icon {
   height: 180px;
   width: 180px;
   object-fit: contain;
+}
+
+.equal-width {
+  width: 33.33%;
 }
