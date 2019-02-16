@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
+import API from "../../api";
 import mongoPhoto from "../../img/mongo.jpg";
+import * as routes from "../../constants/routes";
 
 class EditItem extends Component {
   constructor(props) {
@@ -23,8 +24,7 @@ class EditItem extends Component {
   }
 
   getItemToUpdate = () => {
-    axios
-      .get(`/api/GET/${this.state.editingId}`)
+    API.get(`/api/GET/${this.state.editingId}`)
       .then(res => {
         const item = res.data;
         this.setState({ item, errors: {} });
@@ -42,13 +42,12 @@ class EditItem extends Component {
       item: this.item.value
     };
 
-    axios
-      .patch(`/api/PATCH/${this.state.editingId}`, updatedItem)
+    API.patch(`/api/PATCH/${this.state.editingId}`, updatedItem)
       .then(res => {
         console.log(res);
         console.log(res.data);
         this.setState({ errors: {} });
-        this.props.history.push("/");
+        this.props.history.push(routes.HOME);
       })
       .catch(err => {
         console.log(err.response.data);

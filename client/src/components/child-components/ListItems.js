@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import API from "../../api";
 import isEmpty from "../../validation/is-empty";
 import { Link } from "react-router-dom";
 
@@ -26,8 +26,7 @@ class ListItems extends Component {
   }
 
   getItems = () => {
-    axios
-      .get(`/api/GET`)
+    API.get(`/api/GET`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -54,8 +53,7 @@ class ListItems extends Component {
     const newItem = {
       item: this.state.item
     };
-    axios
-      .post(`/api/POST`, newItem)
+    API.post(`/api/POST`, newItem)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -69,8 +67,7 @@ class ListItems extends Component {
 
   deleteItem = id => {
     this.setState({ deleting: true });
-    axios
-      .delete(`/api/DELETE/${id}`)
+    API.delete(`/api/DELETE/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -90,7 +87,7 @@ class ListItems extends Component {
           </td>
 
           <td className="text-center">
-            <Link to={`/edit/${i._id}`} className="btn btn-success">
+            <Link to={`edit/${i._id}`} className="btn btn-success">
               <i className="far fa-edit" /> edit
             </Link>
           </td>
