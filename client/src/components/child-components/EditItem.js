@@ -24,7 +24,7 @@ class EditItem extends Component {
 
   getItemToUpdate = () => {
     axios
-      .get(`https://merncrudd.herokuapp.com/GET/${this.state.editingId}`)
+      .get(`https://merncrudd.herokuapp.com/api/GET/${this.state.editingId}`)
       .then(res => {
         const item = res.data;
         this.setState({ item, errors: {} });
@@ -44,7 +44,7 @@ class EditItem extends Component {
 
     axios
       .patch(
-        `https://merncrudd.herokuapp.com/PATCH/${this.state.editingId}`,
+        `https://merncrudd.herokuapp.com/api/PATCH/${this.state.editingId}`,
         updatedItem
       )
       .then(res => {

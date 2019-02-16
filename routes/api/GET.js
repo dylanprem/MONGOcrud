@@ -47,7 +47,4 @@ router.get("/:id", cors(), (req, res) => {
     .catch(err => res.json({ MongoError: err }));
 });
 
-//options
-router.options("/*", cors());
-
 module.exports = router;
