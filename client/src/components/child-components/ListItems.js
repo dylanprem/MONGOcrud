@@ -90,7 +90,7 @@ class ListItems extends Component {
           </td>
 
           <td className="text-center">
-            <Link to={`edit/${i._id}`} className="btn btn-success">
+            <Link to={`/edit/${i._id}`} className="btn btn-success">
               <i className="far fa-edit" /> edit
             </Link>
           </td>
