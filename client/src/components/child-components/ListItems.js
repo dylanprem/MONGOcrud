@@ -27,7 +27,7 @@ class ListItems extends Component {
 
   getItems = () => {
     axios
-      .get(`http://localhost:5000/api/GET`)
+      .get(`/api/GET`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -55,7 +55,7 @@ class ListItems extends Component {
       item: this.state.item
     };
     axios
-      .post(`http://localhost:5000/api/POST`, newItem)
+      .post(`/api/POST`, newItem)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -70,7 +70,7 @@ class ListItems extends Component {
   deleteItem = id => {
     this.setState({ deleting: true });
     axios
-      .delete(`http://localhost:5000/api/DELETE/${id}`)
+      .delete(`/api/DELETE/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
