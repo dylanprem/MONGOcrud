@@ -42,7 +42,4 @@ router.patch("/:id", cors(), (req, res) => {
     );
 });
 
-//options
-router.options("/*", cors());
-
 module.exports = router;
